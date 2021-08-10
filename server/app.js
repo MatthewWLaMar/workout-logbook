@@ -5,7 +5,7 @@ let sequelize = require("./db");
 
 
 let user = require("./controllers/usercontroller")
-// let log = require("./controllers/logcontroller")
+let logbook = require("./controllers/logcontroller")
 
 
 sequelize.sync();
@@ -13,7 +13,7 @@ sequelize.sync();
 app.use(require('./middleware/headers'));
 
 app.use(express.json());
-// app.use("/log", log);
+app.use("/logbook", logbook);
 
 app.use("/user", user)
 
